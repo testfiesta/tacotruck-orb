@@ -1,0 +1,9 @@
+version: 2.1
+description: >
+  TacoTruck is a tool that automatically submits test results to various testing platforms and services.
+  Streamline your test reporting workflow with a simple, unified interface that handles the complexity
+  of uploading test data to multiple platforms, giving your team better visibility into test results
+  and software quality.
+display:
+  home_url: "https://docs.testfiesta.com"
+  source_url: "https://github.com/testfiesta/tacotruck-orb"
