@@ -19,7 +19,7 @@ jobs:
       - tacotruck/install:
           version: "latest"
       - run: npm test
-      - run: npx tacotruck testfiesta run:submit --data ./results.xml --organization <YOUR_ORG> --token <YOUR_TOKEN> --project-key <YOUR_PROJECT_KEY>
+      - run: npx @testfiesta/tacotruck run:submit --data ./results.xml --organization <YOUR_ORG> --token <YOUR_TOKEN> --project-key <YOUR_PROJECT_KEY>
 
 workflows:
   test:
@@ -34,7 +34,7 @@ workflows:
 Installs the TacoTruck CLI globally and verifies the installation.
 
 **Parameters:**
-- `version` (string, default: "latest") - Version of @testfiesta/tacotruck to install
+- `version` (string, default: "latest") - Version of `@testfiesta/tacotruck` to install
 - `check_version` (boolean, default: true) - Whether to verify installation by printing version
 
 **Examples:**

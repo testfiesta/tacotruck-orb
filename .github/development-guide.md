@@ -52,7 +52,7 @@ cd tacotruck-orb
 In CircleCI, orbs belong to namespaces. If you don't already have a namespace, create one:
 
 ```
-circleci namespace create <your-namespace-name> --org-ig <your-circle-ci-org-id> --token <your-circle-ci-token>
+circleci namespace create <your-namespace-name> --org-id <your-circle-ci-org-id> --token <your-circle-ci-token>
 ```
 
 Replace `your-namespace-name` with your desired namespace, `your-circle-ci-org-id` with your CircleCI organization ID and `your-circle-ci-token` with your CircleCI token.
