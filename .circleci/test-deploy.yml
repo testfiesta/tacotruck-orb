@@ -19,7 +19,8 @@ jobs:
       - image: cimg/base:current
     steps:
       - checkout
-      - tacotruck/greet
+      - tacotruck/install:
+          version: "latest"
 workflows:
   test-deploy:
     jobs:
