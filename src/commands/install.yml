@@ -1,0 +1,21 @@
+description: |
+  Install the TacoTruck CLI tool globally and verify the installation by printing the version.
+  This command requires a Node.js environment (use the default executor or cimg/node image).
+
+parameters:
+  version:
+    type: string
+    default: "latest"
+    description: "Version of @testfiesta/tacotruck to install. Use 'latest' for the most recent version."
+  check_version:
+    type: boolean
+    default: true
+    description: "Whether to check and print the CLI version after installation"
+
+steps:
+  - run:
+      environment:
+        PARAM_VERSION: <<parameters.version>>
+        PARAM_CHECK_VERSION: <<parameters.check_version>>
+      name: Install TacoTruck CLI
+      command: <<include(scripts/install.sh)>>

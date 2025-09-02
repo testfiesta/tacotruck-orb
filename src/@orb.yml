@@ -7,3 +7,6 @@ description: >
 display:
   home_url: "https://docs.testfiesta.com"
   source_url: "https://github.com/testfiesta/tacotruck-orb"
+
+commands:
+  install: <<include(commands/install.yml)>>
