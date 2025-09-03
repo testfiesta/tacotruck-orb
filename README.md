@@ -92,7 +92,7 @@ Submits test results to supported testing platforms (TestFiesta, TestRail).
 
 ### Resources
 - [TacoTruck Documentation](https://docs.testfiesta.com) - Complete documentation for TacoTruck features and supported platforms.
-- [Tacotruck Examples](https://github.com/testfiesta/tacotruck-orb/tree/main/examples) - The examples directory contains a variety of sample CircleCI configurations that demonstrate how to use the TacoTruck orb.
+- [Tacotruck Examples](https://github.com/testfiesta/tacotruck-examples) - The examples directory contains a variety of sample CircleCI configurations that demonstrate how to use the TacoTruck orb.
  - [TacoTruck CircleCI Guide](https://docs.testfiesta.com/automation/ci-cd-integration/circleci)
 
 ### How to Contribute
