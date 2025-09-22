@@ -13,8 +13,7 @@ parameters:
     description: "Path to the test results directory or file to submit"
   project_key:
     type: string
-    default: ""
-    description: "Project key for TacoTruck submission (optional if configured in project)"
+    description: "Project key for TacoTruck submission"
   api_key:
     type: env_var_name
     description: "Environment variable name containing the TacoTruck API key"
@@ -26,7 +25,6 @@ parameters:
     description: "Name of the run"
   base_url:
     type: string
-    default: "https://staging.api.testfiesta.com"
     description: "Base URL for the TacoTruck API (optional if using default)"
 
 steps:
