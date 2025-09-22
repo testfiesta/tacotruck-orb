@@ -21,6 +21,8 @@ validate_environment() {
 validate_parameters() {
     local results_path="$1"
     local api_key_var="$2"
+    local base_url="$3"
+    local project_key="$4"
 
     if [[ ! -e "${results_path}" ]]; then
         echo "Error: Results path '${results_path}' does not exist."
@@ -33,8 +35,22 @@ validate_parameters() {
         exit 1
     fi
 
+    if [[ -z "${base_url}" ]]; then
+        echo "Error: Base URL is required but not provided."
+        echo "Please set the PARAM_BASE_URL parameter."
+        exit 1
+    fi
+
+    if [[ -z "${project_key}" ]]; then
+        echo "Error: Project key is required but not provided."
+        echo "Please set the PARAM_PROJECT_KEY parameter."
+        exit 1
+    fi
+
     echo "Results path: ${results_path}"
     echo "API key variable: ${api_key_var} (configured)"
+    echo "Base URL: ${base_url}"
+    echo "Project key: ${project_key}"
 }
 
 build_submit_command() {
@@ -48,17 +64,7 @@ build_submit_command() {
 
     local cmd="npx @testfiesta/tacotruck ${provider} run:submit"
 
-    cmd="${cmd} --token \"${!api_key_var}\" --data \"${results_path}\" --organization \"${handle}\" --name \"${run_name}\""
-
-    if [[ -n "${project_key}" ]]; then
-        cmd="${cmd} --project-key \"${project_key}\""
-    fi
-
-    if [[ -n "${base_url}" ]]; then
-        echo "Base URL: ${base_url}"
-        # This option is not yet supported.
-        # cmd="${cmd} --base-url \"${base_url}\""
-    fi
+    cmd="${cmd} --token \"${!api_key_var}\" --url \"${base_url}\" --project-key \"${project_key}\" --data \"${results_path}\" --organization \"${handle}\" --name \"${run_name}\""
 
     echo "${cmd}"
 }
@@ -108,7 +114,7 @@ main() {
     base_url=$(circleci env subst "${PARAM_BASE_URL}")
 
     validate_environment
-    validate_parameters "${results_path}" "${api_key_var}"
+    validate_parameters "${results_path}" "${api_key_var}" "${base_url}" "${project_key}"
 
     show_submission_info "${provider}" "${results_path}" "${project_key}" "${base_url}"
 
