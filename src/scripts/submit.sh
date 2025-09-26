@@ -64,7 +64,7 @@ build_submit_command() {
 
     local cmd="npx @testfiesta/tacotruck ${provider} run:submit"
 
-    cmd="${cmd} --token \"${!api_key_var}\" --url \"${base_url}\" --project-key \"${project_key}\" --data \"${results_path}\" --organization \"${handle}\" --name \"${run_name}\""
+    cmd="${cmd} --token \"${!api_key_var}\" --url \"${base_url}\" --project \"${project_key}\" --data \"${results_path}\" --organization \"${handle}\" --name \"${run_name}\""
 
     echo "${cmd}"
 }
