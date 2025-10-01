@@ -41,3 +41,4 @@ usage:
                   api_key: <<parameters.api_key>>
                   handle: "ORG_1"
                   run_name: "CircleCI Test Run"
+                  base_url: "https://api.testfiesta.com"
