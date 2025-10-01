@@ -25,7 +25,7 @@ parameters:
     description: "Name of the run"
   base_url:
     type: string
-    description: "Base URL for the TacoTruck API (optional if using default)"
+    description: "Base URL for the TacoTruck API"
 
 steps:
   - run:
