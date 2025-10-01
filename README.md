@@ -20,6 +20,7 @@ jobs:
           version: "latest"
       - run: npm test
       - tacotruck/submit:
+          base_url: "https://api.testfiesta.com"
           provider: "testfiesta"
           results_path: "./test-results/junit.xml"
           project_key: "my-project"
@@ -67,7 +68,7 @@ Submits test results to supported testing platforms (TestFiesta, TestRail).
 - `api_key` (env_var_name) - Environment variable name containing the API key
 - `handle` (string) - Organization handle (TestFiesta) or username (TestRail)
 - `run_name` (string, default: "TacoTruck Test Run") - Name for the test run
-- `base_url` (string) - API base URL (optional)
+- `base_url` (string) - API base URL (required)
 
 **Examples:**
 
@@ -80,6 +81,7 @@ Submits test results to supported testing platforms (TestFiesta, TestRail).
     api_key: "TESTFIESTA_API_KEY"
     handle: "my-org"
     run_name: "CI Test Run"
+    base_url: "https://api.testfiesta.com"
 
 # Submit to TestRail
 - tacotruck/submit:
@@ -88,6 +90,7 @@ Submits test results to supported testing platforms (TestFiesta, TestRail).
     api_key: "TESTRAIL_API_KEY"
     handle: "username"
     run_name: "Automated Test Run"
+    base_url: "https://<your-domain>.testrail.com"
 ```
 
 ### Resources
