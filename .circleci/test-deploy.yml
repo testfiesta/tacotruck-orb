@@ -42,11 +42,11 @@ jobs:
             EOF
       - tacotruck/submit:
           provider: "testfiesta"
-          base_url: "https://api.testfiesta.com"
+          base_url: "https://staging.api.testfiesta.com"
           results_path: "./test-results/junit.xml"
-          project_key: "test-project"
+          project_key: "PRJ_1"
           api_key: <<parameters.api_key>>
-          handle: "ORG_1"
+          handle: "acmecorp"
           run_name: "CircleCI Test Run"
 workflows:
   test-deploy:
